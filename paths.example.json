@@ -1,0 +1,7 @@
+{
+  "input_txt": "data/input.txt",
+  "input_conllu": "data/gold.conllu",
+  "output_conllu": "results/prediction.conllu",
+  "eval_script": "scripts/conll18_ud_eval.py",
+  "model_variant": "combined"
+}

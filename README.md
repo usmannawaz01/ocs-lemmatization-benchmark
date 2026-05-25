@@ -8,65 +8,39 @@ The trained tokenizer and lemmatizer model weights are available on Hugging Face
 https://huggingface.co/usmannawaz/old-church-slavonic-tokenizer-lemmatizer
 ```
 
-## Overview
-
-This repository provides scripts for:
-
-- raw-text prediction;
-- gold-tokenized lemmatization evaluation;
-- CoNLL-U evaluation using the official UD evaluation script.
-
-The training dataset is not redistributed in this repository.
-
 ## Installation
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Recommended `requirements.txt`:
+## Scripts
 
 ```text
-stanza
-huggingface_hub
+scripts/run_raw_stanza.py
+scripts/run_goldtok_stanza.py
+scripts/evaluate_conllu.py
 ```
 
-## Model weights
-
-The model weights are downloaded from Hugging Face during script execution.
-
-Available model variants:
-
-```text
-models/new-data/   tokenizer and lemmatizer trained on the newly annotated OCS dataset
-models/combined/   tokenizer and lemmatizer trained on the new dataset + UD Old Church Slavonic PROIEL
-```
-
-## Experiment modes
-
-### Raw-text mode
-
-Raw-text mode evaluates the full pipeline:
+## Raw-text mode
 
 ```text
 raw text → retrained tokenizer → official Stanza POS → retrained lemmatizer → CoNLL-U
 ```
 
-Run:
+Edit the paths at the top of `scripts/run_raw_stanza.py`, then run:
 
 ```bash
 python scripts/run_raw_stanza.py
 ```
 
-### Gold-tokenized mode
-
-Gold-tokenized mode evaluates lemmatization with fixed gold token boundaries:
+## Gold-tokenized mode
 
 ```text
 gold CoNLL-U tokens → official Stanza POS → retrained lemmatizer → predicted CoNLL-U
 ```
 
-Run:
+Edit the paths at the top of `scripts/run_goldtok_stanza.py`, then run:
 
 ```bash
 python scripts/run_goldtok_stanza.py
@@ -74,31 +48,27 @@ python scripts/run_goldtok_stanza.py
 
 ## Evaluation
 
-Use the official CoNLL-U 2018 evaluation script:
+Edit the paths at the top of `scripts/evaluate_conllu.py`, then run:
 
 ```bash
-python scripts/conll18_ud_eval.py -v gold.conllu prediction.conllu
+python scripts/evaluate_conllu.py
 ```
 
-
-
-## Repository structure
+## Model variants
 
 ```text
-ocs-lemmatization-benchmark/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── scripts/
-│   ├── run_raw_stanza.py
-│   ├── run_goldtok_stanza.py
-│   └── evaluate_conllu.py
-├── data/
-│   └── README.md
-├── results/
-│   └── README.md
-└── configs/
-    └── paths.example.json
+MODEL_VARIANT = "combined"
+MODEL_VARIANT = "new-data"
+```
+
+## Reproduced result
+
+Using the Hugging Face `models/combined/` weights with the official CoNLL-U evaluation script:
+
+```text
+Tokens     | 100.00
+Words      | 100.00
+Lemmas     | 88.60
 ```
 
 ## Data availability
@@ -107,7 +77,7 @@ The training dataset is not redistributed in this repository.
 
 Users should place local input files under `data/` or update paths in the scripts.
 
-Official Stanza pretrained POS models are not redistributed. They are downloaded by Stanza during execution.
+Official Stanza pretrained POS models are downloaded by Stanza during execution.
 
 ## License
 

@@ -1,0 +1,2 @@
+stanza
+huggingface_hub
