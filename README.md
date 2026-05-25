@@ -78,7 +78,7 @@ Model weights are hosted on Hugging Face under CC BY-NC-SA 4.0.
 
 ## Citation
 
-If you use this repository or the model weights, please cite the associated Old Church Slavonic lemmatization benchmark paper, Stanza, and UD Old Church Slavonic PROIEL where applicable.
+If you wish to cite please use following:
 
 ```bibtex
 @inproceedings{nawaz2026ocslemmatization,
