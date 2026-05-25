@@ -61,19 +61,10 @@ MODEL_VARIANT = "combined"
 MODEL_VARIANT = "new-data"
 ```
 
-## Reproduced result
-
-Using the Hugging Face `models/combined/` weights with the official CoNLL-U evaluation script:
-
-```text
-Tokens     | 100.00
-Words      | 100.00
-Lemmas     | 88.60
-```
 
 ## Data availability
 
-The training dataset is not redistributed in this repository.
+The training dataset is not redistributed.
 
 Users should place local input files under `data/` or update paths in the scripts.
 
@@ -90,19 +81,21 @@ Model weights are hosted on Hugging Face under CC BY-NC-SA 4.0.
 If you use this repository or the model weights, please cite the associated Old Church Slavonic lemmatization benchmark paper, Stanza, and UD Old Church Slavonic PROIEL where applicable.
 
 ```bibtex
-@inproceedings{nawaz2025ocslemmatization,
-  title = {Towards Benchmarking Old Church Slavonic Lemmatization},
-  author = {Nawaz, Usman and others},
-  year = {2025}
+@inproceedings{nawaz2026ocslemmatization,
+  title     = {Towards Benchmarking Old Church Slavonic Lemmatization},
+  author    = {Nawaz, Usman and Napolitano, Marianna and Karafillidis, Iris and Lo Presti, Liliana and La Cascia, Marco},
+  booktitle = {Bridges and Gaps between Formal and Computational Linguistics (BriGap 2026 Workshop)},
+  year      = {2026},
+  note      = {Submitted}
 }
 ```
 
 ```bibtex
 @inproceedings{qi2020stanza,
-  title = {Stanza: A Python Natural Language Processing Toolkit for Many Human Languages},
-  author = {Qi, Peng and Zhang, Yuhao and Zhang, Yuhui and Bolton, Jason and Manning, Christopher D.},
-  booktitle = {Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: System Demonstrations},
-  pages = {101--108},
-  year = {2020}
+  title={Stanza: A Python natural language processing toolkit for many human languages},
+  author={Qi, Peng and Zhang, Yuhao and Zhang, Yuhui and Bolton, Jason and Manning, Christopher D},
+  booktitle={Proceedings of the 58th annual meeting of the association for computational linguistics: system demonstrations},
+  pages={101--108},
+  year={2020}
 }
 ```
