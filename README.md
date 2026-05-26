@@ -17,9 +17,9 @@ pip install -r requirements.txt
 ## Scripts
 
 ```text
-scripts/run_raw_stanza.py
-scripts/run_goldtok_stanza.py
-scripts/evaluate_conllu.py
+scripts/runrawstanza.py
+scripts/rungoldtokstanza.py
+scripts/evaluateconllu.py
 ```
 
 ## Raw-text mode
