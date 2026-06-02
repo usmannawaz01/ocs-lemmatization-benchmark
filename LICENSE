@@ -2,12 +2,12 @@
 
 This repository uses multiple licenses.
 
-#Code and scripts:
-The code and scripts in this repository are licensed under the Apache License 2.0. The full Apache License 2.0 text visit http://www.apache.org/licenses/
+**Code and scripts:**  
+The code and scripts in this repository are licensed under the Apache License 2.0. For more details, visit:  
+http://www.apache.org/licenses/
 
-#Data:
-The annotated OCS data in the newdata/ directory is released for non-commercial research use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+**Data:**  
+The annotated OCS data in the `newdata/` directory is released for non-commercial research use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
 
-For more details about the data license, visit:
+For more details about the data license, visit:  
 https://creativecommons.org/licenses/by-nc-sa/4.0/
-
