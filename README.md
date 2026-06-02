@@ -8,6 +8,11 @@ The trained tokenizer and lemmatizer model weights are available on Hugging Face
 https://huggingface.co/usmannawaz/old-church-slavonic-tokenizer-lemmatizer
 ```
 
+An interactive demo is available as a Hugging Face Space:
+
+```text
+https://huggingface.co/spaces/usmannawaz/ocs-combined-lemmatizer-demo
+
 ## Installation
 
 ```bash
