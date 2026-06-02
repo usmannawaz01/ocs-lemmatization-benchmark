@@ -28,10 +28,10 @@ scripts/evaluateconllu.py
 raw text → retrained tokenizer → official Stanza POS → retrained lemmatizer → CoNLL-U
 ```
 
-Edit the paths at the top of `scripts/run_raw_stanza.py`, then run:
+Edit the paths at the top of `scripts/runrawstanza.py`, then run:
 
 ```bash
-python scripts/run_raw_stanza.py
+python scripts/runrawstanza.py
 ```
 
 ## Gold-tokenized mode
@@ -40,18 +40,18 @@ python scripts/run_raw_stanza.py
 gold CoNLL-U tokens → official Stanza POS → retrained lemmatizer → predicted CoNLL-U
 ```
 
-Edit the paths at the top of `scripts/run_goldtok_stanza.py`, then run:
+Edit the paths at the top of `scripts/rungoldtokstanza.py`, then run:
 
 ```bash
-python scripts/run_goldtok_stanza.py
+python scripts/rungoldtokstanza.py
 ```
 
 ## Evaluation
 
-Edit the paths at the top of `scripts/evaluate_conllu.py`, then run:
+Edit the paths at the top of `scripts/evaluateconllu.py`, then run:
 
 ```bash
-python scripts/evaluate_conllu.py
+python scripts/evaluateconllu.py
 ```
 
 ## Model variants
