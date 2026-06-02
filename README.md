@@ -63,20 +63,26 @@ MODEL_VARIANT = "combined"
 MODEL_VARIANT = "new-data"
 ```
 
-
 ## Data availability
 
-The training dataset is not redistributed.
+We release the newly annotated OCS dataset under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0) for non-commercial research purposes.
 
-Users should place local input files under `data/` or update paths in the scripts.
+The UD 2.12 OCS data used in the combined experiments is not redistributed in this repository, since it is already publicly available from the Universal Dependencies treebanks. To reproduce the combined-data experiments, users should download UD 2.12 OCS from Universal Dependencies and combine it with the new data.
 
-Official Stanza pretrained POS models are downloaded by Stanza during execution.
+A major part of the  data is derived from Azbuka materials, and additional material is derived from Cyrillomethodiana. We have obtained permission to use and release these materials for non-commercial research purposes. The original source texts remain the property of their respective source providers.
+
+
+
 
 ## License
 
-Code in this repository is released under Apache-2.0.
+The annotated OCS data and retrained model weights are released for non-commercial research use under CC BY-NC-SA 4.0.
 
-Model weights are hosted on Hugging Face under CC BY-NC-SA 4.0.
+The UD 2.12 OCS data is not redistributed here and remains subject to the license and terms of the Universal Dependencies treebanks.
+
+This repository provides scripts to load the models, run inference, and evaluate the outputs. Model training followed the standard Stanza training procedure described in the [official Stanza training documentation](https://stanfordnlp.github.io/stanza/training.html).
+
+This work uses Stanza, which is released under the Apache License 2.0.
 
 ## Citation
 
