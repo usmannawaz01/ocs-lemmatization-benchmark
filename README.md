@@ -65,7 +65,7 @@ MODEL_VARIANT = "new-data"
 
 ## Data availability
 
-We release the newly annotated OCS dataset under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0) for non-commercial research purposes.
+We release the annotated OCS dataset under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0) for non-commercial research purposes.
 
 The UD 2.12 OCS data used in the combined experiments is not redistributed in this repository, since it is already publicly available from the Universal Dependencies treebanks. To reproduce the combined-data experiments, users should download UD 2.12 OCS from Universal Dependencies and combine it with the new data.
 
