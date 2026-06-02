@@ -79,8 +79,6 @@ The code and scripts in this repository are licensed under the Apache License 2.
 
 The annotated OCS data and retrained model weights are released for non-commercial research use under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-The UD 2.12 OCS data is not redistributed here and remains subject to the license and terms of the Universal Dependencies treebanks.
-
 This repository provides scripts to load the models, run inference, and evaluate the outputs. Model training followed the standard Stanza training procedure described in the [official Stanza training documentation](https://stanfordnlp.github.io/stanza/training.html).
 
 This work uses [Stanza](https://stanfordnlp.github.io/stanza/), which is released under the Apache License 2.0.
