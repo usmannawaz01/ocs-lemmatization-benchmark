@@ -70,9 +70,7 @@ output_dir = os.path.dirname(OUTPUT_CONLLU)
 if output_dir:
     os.makedirs(output_dir, exist_ok=True)
 
-# with open(OUTPUT_CONLLU, "w", encoding="utf-8") as fout:
-#     CoNLL.write_doc2conll(doc, fout)
-#
+
 with open(INPUT_TXT, "r", encoding="utf-8") as f:
     raw_text = f.read()
 
