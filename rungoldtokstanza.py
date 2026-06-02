@@ -3,7 +3,8 @@ from pathlib import Path
 
 import stanza
 from huggingface_hub import snapshot_download
-from stanza.utils.conll import CoNLL
+
+
 
 INPUT_CONLLU = r"path/to/gold.conllu"
 OUTPUT_CONLLU = r"path/to/prediction.goldtok.conllu"
@@ -76,7 +77,28 @@ output_dir = os.path.dirname(OUTPUT_CONLLU)
 if output_dir:
     os.makedirs(output_dir, exist_ok=True)
 
-with open(OUTPUT_CONLLU, "w", encoding="utf-8") as fout:
-    CoNLL.write_doc2conll(doc, fout)
+
+pred_lemmas = [word.lemma for sent in doc.sentences for word in sent.words]
+
+lemma_i = 0
+
+with open(INPUT_CONLLU, "r", encoding="utf-8") as fin, \
+     open(OUTPUT_CONLLU, "w", encoding="utf-8") as fout:
+
+    for line in fin:
+        raw = line.rstrip("\n")
+
+        if raw.startswith("#") or not raw:
+            fout.write(line)
+            continue
+
+        cols = raw.split("\t")
+
+        if len(cols) == 10 and "-" not in cols[0] and "." not in cols[0]:
+            cols[2] = pred_lemmas[lemma_i]
+            lemma_i += 1
+            fout.write("\t".join(cols) + "\n")
+        else:
+            fout.write(line)
 
 print("Wrote:", OUTPUT_CONLLU)
