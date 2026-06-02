@@ -3,10 +3,12 @@ from pathlib import Path
 
 import stanza
 from huggingface_hub import snapshot_download
-from stanza.utils.conll import CoNLL
+
+
 
 INPUT_TXT = r"path/to/input.txt"
 OUTPUT_CONLLU = r"path/to/output.conllu"
+
 MODEL_VARIANT = "combined"
 
 repo_dir = snapshot_download(
@@ -58,7 +60,57 @@ output_dir = os.path.dirname(OUTPUT_CONLLU)
 if output_dir:
     os.makedirs(output_dir, exist_ok=True)
 
+pred_lemmas = [word.lemma for sent in doc.sentences for word in sent.words]
+
+lemma_i = 0
+
+doc = nlp(raw_text)
+
+output_dir = os.path.dirname(OUTPUT_CONLLU)
+if output_dir:
+    os.makedirs(output_dir, exist_ok=True)
+
+# with open(OUTPUT_CONLLU, "w", encoding="utf-8") as fout:
+#     CoNLL.write_doc2conll(doc, fout)
+#
+with open(INPUT_TXT, "r", encoding="utf-8") as f:
+    raw_text = f.read()
+
+doc = nlp(raw_text)
+
+output_dir = os.path.dirname(OUTPUT_CONLLU)
+if output_dir:
+    os.makedirs(output_dir, exist_ok=True)
+
+
 with open(OUTPUT_CONLLU, "w", encoding="utf-8") as fout:
-    CoNLL.write_doc2conll(doc, fout)
+    for sent in doc.sentences:
+        for i, word in enumerate(sent.words, start=1):
+            form = word.text
+            lemma = word.lemma if word.lemma else "_"
+
+            if i == 1:
+                head = "0"
+                deprel = "root"
+            else:
+                head = "1"
+                deprel = "dep"
+
+            fout.write(
+                "\t".join([
+                    str(i),
+                    form,
+                    lemma,
+                    "_",
+                    "_",
+                    "_",
+                    head,
+                    deprel,
+                    "_",
+                    "_",
+                ]) + "\n"
+            )
+
+        fout.write("\n")
 
 print("Wrote:", OUTPUT_CONLLU)
