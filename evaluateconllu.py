@@ -1,7 +1,7 @@
 import os
 import sys
 import subprocess
-.
+
 EVAL_SCRIPT = r"path/to/conll18_ud_eval.py"
 GOLD_FILE = r"path/to/gold.conllu"
 PRED_FILE = r"path/to/prediction.conllu"
