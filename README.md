@@ -98,12 +98,4 @@ If you wish to cite please use following:
 }
 ```
 
-```bibtex
-@inproceedings{qi2020stanza,
-  title={Stanza: A Python natural language processing toolkit for many human languages},
-  author={Qi, Peng and Zhang, Yuhao and Zhang, Yuhui and Bolton, Jason and Manning, Christopher D},
-  booktitle={Proceedings of the 58th annual meeting of the association for computational linguistics: system demonstrations},
-  pages={101--108},
-  year={2020}
-}
-```
+
