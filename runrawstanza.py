@@ -83,6 +83,10 @@ if output_dir:
 
 with open(OUTPUT_CONLLU, "w", encoding="utf-8") as fout:
     for sent in doc.sentences:
+
+        sent_text = " ".join(word.text for word in sent.words)
+        fout.write(f"# text = {sent_text}\n")
+
         for i, word in enumerate(sent.words, start=1):
             form = word.text
             lemma = word.lemma if word.lemma else "_"
