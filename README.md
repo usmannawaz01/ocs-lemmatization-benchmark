@@ -47,7 +47,7 @@ Edit the paths at the top of `scripts/rungoldtokstanza.py`, then run:
 ```bash
 python scripts/rungoldtokstanza.py
 ```
-In both modes, use silver POS tags internally as input features for lemmatization.
+Both mode use silver POS tags internally for lemmatization.
 ## Evaluation
 
 Edit the paths at the top of `scripts/evaluateconllu.py`, then run:
