@@ -107,7 +107,7 @@ REPLACEMENTS2 = {
 
 
 def apply_mapping(text, mapping):
-    """Replace characters in text according to provided mapping dictionary."""
+    
     for old_char, new_char in mapping.items():
         text = text.replace(old_char, new_char)
     return text
