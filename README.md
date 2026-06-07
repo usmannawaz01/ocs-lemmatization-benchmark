@@ -27,7 +27,7 @@ scripts/evaluateconllu.py
 ## Raw-text mode
 
 ```text
-raw text → retrained tokenizer → official Stanza POS → retrained lemmatizer → CoNLL-U
+raw text → retrained tokenizer → retrained lemmatizer → CoNLL-U
 ```
 
 Edit the paths at the top of `scripts/runrawstanza.py`, then run:
@@ -39,7 +39,7 @@ python scripts/runrawstanza.py
 ## Gold-tokenized mode
 
 ```text
-gold CoNLL-U tokens → official Stanza POS → retrained lemmatizer → predicted CoNLL-U
+gold CoNLL-U tokens → retrained lemmatizer → predicted CoNLL-U
 ```
 
 Edit the paths at the top of `scripts/rungoldtokstanza.py`, then run:
@@ -47,7 +47,7 @@ Edit the paths at the top of `scripts/rungoldtokstanza.py`, then run:
 ```bash
 python scripts/rungoldtokstanza.py
 ```
-
+In both modes, use silver POS tags internally as input features for lemmatization.
 ## Evaluation
 
 Edit the paths at the top of `scripts/evaluateconllu.py`, then run:
