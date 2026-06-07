@@ -187,7 +187,7 @@ style.configure('TCombobox', font=('Arial', 10))
 main = ttk.Frame(app, padding=15)
 main.pack(fill=tk.BOTH, expand=True)
 
-# Dropdown for selecting mapping database
+
 values = ["Cyrillomethodiana", "Азбука веры", "database 3"]
 db_label = ttk.Label(main, text="Please select your desired option to convert text:")
 db_label.grid(row=0, column=0, sticky='w', pady=(0,5))
@@ -203,7 +203,7 @@ welcome_label = ttk.Label(
 )
 welcome_label.grid(row=1, column=0, columnspan=2, pady=(10,20))
 
-# Text input area
+
 input_label = ttk.Label(main, text="Paste your text below:")
 input_label.grid(row=2, column=0, columnspan=2, sticky='w')
 input_box = tk.Text(main, height=10, width=80, font=('Consolas', 10))
@@ -211,13 +211,13 @@ input_box.grid(row=3, column=0, columnspan=2, pady=5)
 submit_text_button = ttk.Button(main, text="Submit", command=paste_text_handler)
 submit_text_button.grid(row=4, column=0, columnspan=2, pady=10)
 
-# Output area
+
 output_label = ttk.Label(main, text="Processed Text:")
 output_label.grid(row=5, column=0, columnspan=2, sticky='w')
 output_box = tk.Text(main, height=10, width=80, font=('Consolas', 10))
 output_box.grid(row=6, column=0, columnspan=2, pady=5)
 
-# Folder processing
+
 folder_label = ttk.Label(main, text="Convert an entire folder of text files:")
 folder_label.grid(row=7, column=0, columnspan=2, sticky='w', pady=(20,5))
 convert_folder_button = ttk.Button(main, text="Select Folder and Process", command=select_folder_handler)
