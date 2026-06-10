@@ -90,20 +90,7 @@ REPLACEMENTS1 = {
 }
 
 
-REPLACEMENTS2 = {
-    '0': '́',
-    '1': '́',
-    '2': '̀',
-    '3': '҆',
-    '4': '҆́',
-    '5': '҆̀',
-    '6': '̑',
 
-    '7': '҃',
-    '8': 'ⸯ',
-    '9': 'Җ҃',
-    '™': '҃'
-}
 
 
 def apply_mapping(text, mapping):
@@ -134,8 +121,7 @@ def paste_text_handler():
     selected_db = db_var.get()
     if selected_db == 'Cyrillomethodiana':
         mapping = REPLACEMENTS1
-    elif selected_db == 'Азбука веры':
-        mapping = REPLACEMENTS2
+
     else:
         messagebox.showinfo('Info', 'Work in progress for the selected database.')
         return
@@ -153,8 +139,7 @@ def select_folder_handler():
     selected_db = db_var.get()
     if selected_db == 'Cyrillomethodiana':
         mapping = REPLACEMENTS1
-    elif selected_db == 'Азбука веры':
-        mapping = REPLACEMENTS2
+
     else:
         messagebox.showinfo('Info', 'Work in progress for the selected database.')
         return
