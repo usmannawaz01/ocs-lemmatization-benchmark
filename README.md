@@ -4,9 +4,8 @@ This repository contains reproducibility scripts for Old Church Slavonic tokeniz
 
 The trained tokenizer and lemmatizer model weights are available on Hugging Face:
 
-```text
 https://huggingface.co/usmannawaz/old-church-slavonic-tokenizer-lemmatizer
-```
+
 
 An interactive demo is available at: [OCS Combined Lemmatizer Demo](https://usmannawaz01.github.io/ocs-lemmatization-benchmark/). 
 
