@@ -6,6 +6,7 @@ TRAIN = r"path train.conllu"
 TEST = r"path test.conllu"
 
 
+
 def tokens(path):
     with Path(path).open(encoding="utf-8") as f:
         for line in f:
@@ -29,16 +30,11 @@ for form, lemma in tokens(TRAIN):
 
 lexicon = {form: lemmas.most_common(1)[0][0] for form, lemmas in d.items()}
 
-total = correct = oov = oov_correct = 0
+total = correct = 0
 
 for form, gold in tokens(TEST):
     total += 1
     pred = lexicon.get(form, form)
-
-    if form not in lexicon:
-        oov += 1
-        if pred == gold:
-            oov_correct += 1
 
     if pred == gold:
         correct += 1
